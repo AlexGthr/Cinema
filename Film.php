@@ -7,8 +7,9 @@ class Film {
     private int $duree;
     private string $synopsis;
     private Realisateur $realisateur;
+    private Categorie $categorie;
 
-    public function __construct(string $titre, string $dateDeSortie, int $duree, string $synopsis, Realisateur $realisateur) {
+    public function __construct(string $titre, string $dateDeSortie, int $duree, string $synopsis, Realisateur $realisateur, Categorie $categorie) {
 
         $this->titre = $titre;
         $this->dateDeSortie = new DateTime($dateDeSortie);
@@ -16,6 +17,8 @@ class Film {
         $this->synopsis = $synopsis;
         $this->realisateur = $realisateur;
         $this->realisateur->addFilm($this);
+        $this->categorie = $categorie;
+        $this->categorie->addCategorieFilm($this);
     }
 
     
@@ -89,9 +92,25 @@ class Film {
 
         return $this;
     }
+    
+    /**
+     * Get the value of categorie
+     */ 
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+    public function setCategorie($categorie)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
 
     public function __toString() {
-        return "« ". $this->titre . " » sortie le " . $this->dateDeSortie->format("d/m/Y") . " à une durée de ". $this->duree . " minutes. <br><br> Synopsis : ". $this->synopsis. "<br> réalisé par : ". $this->realisateur;
+        return "« ". $this->titre . " » sortie le " . $this->dateDeSortie->format("d/m/Y") . " à une durée de ". $this->duree . " minutes. <br>".$this->categorie." <br><br> Synopsis : ". $this->synopsis. "<br> réalisé par : ". $this->realisateur;
     }
+
+
 
 }
