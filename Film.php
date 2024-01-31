@@ -109,14 +109,17 @@ class Film {
         return $this;
     }
 
+    // Method pour ajouter l'assosiation Casting et récupéré les informations Acteur/Role
     public function addCasting(Casting $casting) {
         $this->casting[] = $casting;
     }
 
+    // Method qui affiche un résumé complet du film
     public function getInfosFilm() {
         return "« ". $this->titre . " » sortie le " . $this->dateDeSortie->format("d/m/Y") . " à une durée de ". $this->duree . " minutes. <br>".$this->categorie." <br><br> Synopsis : ". $this->synopsis. "<br> réalisé par : ". $this->realisateur;
     }
 
+    // Method qui affiche le casting d'un film, (Role -> Acteur)
     public function getRoleActeur() {
         $result = "<h1>Casting du film $this<br></h1>";
 

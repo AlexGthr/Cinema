@@ -27,6 +27,7 @@ Class Categorie {
         return $this;
     }
 
+    // Method pour ajouter un film dans une catégorie
     public function addCategorieFilm(Film $film) {
         $this->films[] = $film;
     }

@@ -10,10 +10,13 @@ class Acteur extends Personne {
         // Tableau
         $this->casting = [];
     }
+
+    // Method pour ajouter l'assosiation Casting pour récupéré les informations film/role
     public function addCasting(Casting $casting) {
         $this->casting[] = $casting;
     }
 
+    // Method pour afficher les films dans laquelle l'acteur à jouer
     public function afficherFilmographie() {
         $result = "<br><br><h1>$this a joué dans les films suivant : </h1><br><ul>";
 

@@ -59,6 +59,7 @@ class Casting {
         return $this;
     }
 
+    // Method qui renvoi uniquement le titre du film
     public function getFilmographie() {
         return $this->film;
     }

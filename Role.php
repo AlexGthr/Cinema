@@ -25,10 +25,12 @@ class Role {
         return $this;
     }
 
+    // Method pour ajouter l'assosiation Casting et récupéré les informations Film/Acteur
     public function addCasting(Casting $acteur) {
         $this->acteurs[] = $acteur;
     }
 
+    // Method pour afficher quel acteur à joué ce role
     public function getInfosRole() {
         $result = "<br><br><h1>$this a été joué par les acteurs suivant : </h1><br><ul>";
 

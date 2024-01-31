@@ -1,5 +1,6 @@
 <?php 
 
+// Class PARENT de ACTEUR ET REALISATEUR
 class Personne {
 
     protected string $nom;

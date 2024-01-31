@@ -10,10 +10,12 @@ class Realisateur extends Personne {
         $this->films = []; // Tableau des films réalisé
     }
 
+    // Method pour ajouter un film dans la filmographie d'un réalisateur
     public function addFilm(Film $film) {
         $this->films[] = $film;
     }
 
+    // Method pour afficher la filmographie d'un réalisateur
     public function afficherFilm() {
         $result = "<br><br><h1> Film réalisé par $this : </h1><br><ul>";
 
