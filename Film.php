@@ -6,8 +6,9 @@ class Film {
     private DateTime $dateDeSortie;
     private int $duree;
     private string $synopsis;
-    private Realisateur $realisateur;
+    private Realisateur $realisateur; 
     private Categorie $categorie;
+    private array $rolefilm; // Tableau recupération role film
 
     public function __construct(string $titre, string $dateDeSortie, int $duree, string $synopsis, Realisateur $realisateur, Categorie $categorie) {
 
@@ -19,6 +20,7 @@ class Film {
         $this->realisateur->addFilm($this);
         $this->categorie = $categorie;
         $this->categorie->addCategorieFilm($this);
+        $this->rolefilm = []; // Tableau recupération film
     }
 
     
@@ -105,6 +107,23 @@ class Film {
         $this->categorie = $categorie;
 
         return $this;
+    }
+
+    // Method pour ajouter un role
+    public function addRoleFilm(Role $role) {
+        $this->rolefilm[] = $role;
+    }
+
+    // Method pour afficher un role
+    public function afficherRoleFilm() {
+        $result = "<br><br><h1> Role du film : </h1><br><ul>";
+
+        foreach($this->rolefilm as $role) {
+            $result .= "<br><li>".$role."</li>";
+        }
+
+        $result .= "</ul>";
+        return $result;
     }
 
     public function __toString() {

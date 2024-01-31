@@ -16,11 +16,11 @@ Class Categorie {
     /**
      * Get the value of type
      */ 
-    public function getType()
+    public function getType(): string
     {
         return $this->type;
     }
-    public function setType($type)
+    public function setType(string $type)
     {
         $this->type = $type;
 
@@ -31,6 +31,7 @@ Class Categorie {
         $this->films[] = $film;
     }
 
+    // Method pour afficher les films d'une catégorie
     public function afficherCategorieFilm() {
         $result = "<br><br><h1>Film de la $this</h1><br><ul>";
 
