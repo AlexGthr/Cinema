@@ -24,31 +24,29 @@ $film1 = new Film ("PHP - le film", "25-08-2024", 66, "Un film ou un developpeur
 $film2 = new Film ("Batman - Return", "25-09-2025", 74, "L'histoire de Batman, le retour", $realisateur1, $categorie1);
 
 // Role de film actuel
-$role1 = new Role("Spider-Man", $acteur1, $film1);
-$role2 = new Role("BatMan", $acteur3, $film1);
-$role3 = new Role("Harley Queen", $acteur2, $film1);
-$role4 = new Role("Mario", $acteur1, $film2);
-$role5 = new Role("Spider-Man", $acteur2, $film2);
+$role1 = new Role("Spider-Man");
+$role2 = new Role("BatMan");
+$role3 = new Role("Harley Queen");
+$role4 = new Role("Mario");
+$role5 = new Role("Spider-Man");
 
 // Casting
 $casting1 = new Casting($film1, $acteur1, $role1);
-$casting2 = new Casting($film1, $acteur2, $role2);
-$casting3 = new Casting($film2, $acteur1, $role4);
-$casting4 = new Casting($film2, $acteur2, $role1);
+$casting2 = new Casting($film2, $acteur2, $role1);
+$casting3 = new Casting($film2, $acteur1, $role3);
+$casting4 = new Casting($film1, $acteur2, $role4);
 
-echo $film1;
-echo $film1->afficherRoleFilm();
-
-echo "<br><br><br>";
-
-echo $categorie1->afficherCategorieFilm();
 
 echo $realisateur1->afficherFilm();
-
-echo "************";
-echo $casting1;
-echo "************";
-echo "<br><br>";
-echo $acteur1->getInfosFilmographie();
-echo "<br><br>";
+echo "<br><br>**********************<br><br>";
+echo $acteur1->afficherFilmographie();
+echo "<br><br>**********************<br><br>";
+echo $acteur2->afficherFilmographie();
+echo "<br><br>**********************<br><br>";
+echo $categorie1->afficherCategorieFilm();
+echo "<br><br>**********************<br><br>";
 echo $role1->getInfosRole();
+echo "<br><br>**********************<br><br>";
+echo $film1->getInfosFilm();
+echo "<br><br>**********************<br><br>";
+echo $film1->getRoleActeur();

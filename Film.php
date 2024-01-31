@@ -7,8 +7,7 @@ class Film {
     private int $duree;
     private string $synopsis;
     private Realisateur $realisateur; 
-    private Categorie $categorie;
-    private array $rolefilm; // Tableau recupération role film
+    private Categorie $categorie; // Tableau recupération role film
     private array $casting;
 
     public function __construct(string $titre, string $dateDeSortie, int $duree, string $synopsis, Realisateur $realisateur, Categorie $categorie) {
@@ -21,7 +20,6 @@ class Film {
         $this->realisateur->addFilm($this);
         $this->categorie = $categorie;
         $this->categorie->addCategorieFilm($this);
-        $this->rolefilm = []; // Tableau recupération film
         $this->casting = []; // Tableau récupération casting
     }
 
@@ -111,29 +109,22 @@ class Film {
         return $this;
     }
 
-    // Method pour ajouter un role
-    public function addRoleFilm(Role $role) {
-        $this->rolefilm[] = $role;
-    }
-
-    // Method pour afficher un role
-    public function afficherRoleFilm() {
-        $result = "<br><br><h1> Role du film $this : </h1><br><ul>";
-
-        foreach($this->rolefilm as $role) {
-            $result .= $role->getInfosRole();
-        }
-
-        $result .= "</ul>";
-        return $result;
-    }
-
     public function addCasting(Casting $casting) {
         $this->casting[] = $casting;
     }
 
     public function getInfosFilm() {
         return "« ". $this->titre . " » sortie le " . $this->dateDeSortie->format("d/m/Y") . " à une durée de ". $this->duree . " minutes. <br>".$this->categorie." <br><br> Synopsis : ". $this->synopsis. "<br> réalisé par : ". $this->realisateur;
+    }
+
+    public function getRoleActeur() {
+        $result = "<h1>Casting du film $this<br></h1>";
+
+        foreach($this->casting as $cast) {
+            $result .= "<br><li> $cast </li>";
+        }
+        $result .= "</ul>";
+        return $result;
     }
 
     public function __toString() {

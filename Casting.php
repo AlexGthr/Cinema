@@ -59,7 +59,11 @@ class Casting {
         return $this;
     }
 
+    public function getFilmographie() {
+        return $this->film;
+    }
+
     public function  __toString() {
-        return $this->film." / ".$this->role." / ".$this->acteur;
+        return $this->role." / ".$this->acteur;
     }
 }
