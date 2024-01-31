@@ -5,6 +5,7 @@ class Role {
     private string $personnage;
     private Acteur $acteur;
     private Film $films;
+    private array $acteurPourRole;
 
     public function __construct(string $personnage, Acteur $acteur, Film $films) {
         $this->personnage = $personnage;
@@ -12,6 +13,7 @@ class Role {
         $this->acteur->addActeur($this);
         $this->films = $films;
         $this->films->addRoleFilm($this);
+        $this->acteursPourRole = [];
 
     }
 
@@ -57,7 +59,21 @@ class Role {
         return $this;
     }
 
+    public function addCasting(Casting $acteursPourRole) {
+        $this->acteursPourRole[] = $acteursPourRole;
+    }
+
+    public function getInfosRole() {
+        $result = "<br><br><h1>$this a été joué par les acteurs suivant : </h1><br><ul>";
+
+        foreach($this->acteursPourRole as $acteurPourRole) {
+            $result .= "<br><li>$acteurPourRole</li>";
+        }
+        $result .= "</ul>";
+        return $result;
+    }
+
     public function __toString() {
-        return $this->personnage." : " . $this->acteur;
+        return $this->personnage;
     }
 }

@@ -26,7 +26,7 @@ class Realisateur extends Personne {
     }
 
     public function __toString() {
-        return $this->nom . " " . $this->prenom. " " . $this->dateDeNaissance->format("d/m/Y");
+        return $this->nom . " " . $this->prenom;
     }
 
 }

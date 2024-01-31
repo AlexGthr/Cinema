@@ -9,6 +9,7 @@ class Film {
     private Realisateur $realisateur; 
     private Categorie $categorie;
     private array $rolefilm; // Tableau recupération role film
+    private array $casting;
 
     public function __construct(string $titre, string $dateDeSortie, int $duree, string $synopsis, Realisateur $realisateur, Categorie $categorie) {
 
@@ -21,6 +22,7 @@ class Film {
         $this->categorie = $categorie;
         $this->categorie->addCategorieFilm($this);
         $this->rolefilm = []; // Tableau recupération film
+        $this->casting = []; // Tableau récupération casting
     }
 
     
@@ -126,8 +128,16 @@ class Film {
         return $result;
     }
 
-    public function __toString() {
+    public function addCasting(Casting $casting) {
+        $this->casting[] = $casting;
+    }
+
+    public function getInfosFilm() {
         return "« ". $this->titre . " » sortie le " . $this->dateDeSortie->format("d/m/Y") . " à une durée de ". $this->duree . " minutes. <br>".$this->categorie." <br><br> Synopsis : ". $this->synopsis. "<br> réalisé par : ". $this->realisateur;
+    }
+
+    public function __toString() {
+        return $this->titre;
     }
 
 
