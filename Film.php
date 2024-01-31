@@ -118,10 +118,10 @@ class Film {
 
     // Method pour afficher un role
     public function afficherRoleFilm() {
-        $result = "<br><br><h1> Role du film : </h1><br><ul>";
+        $result = "<br><br><h1> Role du film $this : </h1><br><ul>";
 
         foreach($this->rolefilm as $role) {
-            $result .= "<br><li>".$role."</li>";
+            $result .= $role->getInfosRole();
         }
 
         $result .= "</ul>";
