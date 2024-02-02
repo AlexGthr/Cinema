@@ -21,9 +21,7 @@ class Film {
         $this->categorie = $categorie;
         $this->categorie->addCategorieFilm($this);
         $this->casting = []; // Tableau récupération casting
-    }
-
-    
+    }  
 
     /**
      * Get the value of titre
@@ -116,6 +114,7 @@ class Film {
 
     // Method qui affiche un résumé complet du film
     public function getInfosFilm() {
+
         return "« ". $this->titre . " » sortie le " . $this->dateDeSortie->format("d/m/Y") . " à une durée de ". $this->duree . " minutes. <br>".$this->categorie." <br><br> Synopsis : ". $this->synopsis. "<br> réalisé par : ". $this->realisateur;
     }
 
@@ -131,7 +130,7 @@ class Film {
     }
 
     public function __toString() {
-        return $this->titre;
+        return "« ".$this->titre." » - ".$this->dateDeSortie->format("Y");
     }
 
 

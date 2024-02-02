@@ -75,6 +75,6 @@ class Personne {
 
     function __toString() {
         
-        return $this->nom . " " . $this->prenom. " " . $this->sexe . " " . $this->dateDeNaissance->format("d/m/Y");
+        return $this->nom . " " . $this->prenom;
     }
 }

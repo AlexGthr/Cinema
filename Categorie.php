@@ -34,6 +34,15 @@ Class Categorie {
 
     // Method pour afficher les films d'une catégorie
     public function afficherCategorieFilm() {
+
+        $dates = [];
+        foreach ($this->films as $key => $film)
+        {
+            $dates[$key] = $film->getDateDeSortie()->format('Y-m-d');
+        }
+ 
+        array_multisort($dates, SORT_DESC, $this->films);
+        
         $result = "<br><br><h1>Film de la $this</h1><br><ul>";
 
         foreach($this->films as $film) {

@@ -17,18 +17,22 @@ class Realisateur extends Personne {
 
     // Method pour afficher la filmographie d'un réalisateur
     public function afficherFilm() {
-        $result = "<br><br><h1> Film réalisé par $this : </h1><br><ul>";
+
+        $dates = [];
+        foreach ($this->films as $key => $film)
+        {
+            $dates[$key] = $film->getDateDeSortie()->format('Y-m-d');
+        }
+ 
+        array_multisort($dates, SORT_DESC, $this->films);
+
+        $result = "<br><br><h1> Film réalisé par $this : </h1><ul>";
 
         foreach($this->films as $film) {
-            $result .= "<br><li>$film</li>";
+            $result .= "<li>$film</li>";
         }
 
         $result .= "</ul>";
         return $result;
     }
-
-    public function __toString() {
-        return $this->nom . " " . $this->prenom;
-    }
-
 }

@@ -18,6 +18,15 @@ class Acteur extends Personne {
 
     // Method pour afficher les films dans laquelle l'acteur à jouer
     public function afficherFilmographie() {
+
+        $dates = [];
+        foreach ($this->casting as $key => $castings)
+        {
+            $dates[$key] = $castings->getFilm()->getDateDeSortie()->format('U');
+        }
+ 
+        array_multisort($dates, SORT_DESC, $this->casting);
+
         $result = "<br><br><h1>$this a joué dans les films suivant : </h1><br><ul>";
 
         foreach($this->casting as $cast) {
@@ -25,10 +34,5 @@ class Acteur extends Personne {
         }
         $result .= "</ul>";
         return $result;
-    }
-
-    // To string
-    public function __toString() {
-        return $this->nom . " " . $this->prenom. " ";
     }
 }

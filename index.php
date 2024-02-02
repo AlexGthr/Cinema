@@ -20,8 +20,10 @@ $categorie2 = new Categorie("Comics");
 $categorie3 = new Categorie("Science-Fiction");
 
 // Film
-$film1 = new Film ("PHP - le film", "25-08-2024", 66, "Un film ou un developpeur sauve la planete grâce à une function PHP", $realisateur1, $categorie1);
-$film2 = new Film ("Batman - Return", "25-09-2025", 74, "L'histoire de Batman, le retour", $realisateur1, $categorie1);
+$film1 = new Film ("PHP - le film", "01-02-2021", 66, "Un film ou un developpeur sauve la planete grâce à une function PHP", $realisateur1, $categorie1);
+$film2 = new Film ("Batman - Return", "17-01-2023", 74, "L'histoire de Batman, le retour", $realisateur1, $categorie1);
+
+$films = [$film1, $film2];
 
 // Role de film actuel
 $role1 = new Role("Spider-Man");
