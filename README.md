@@ -16,3 +16,7 @@ ainsi que leur réalisateur (unique, avec nom, prénom, sexe et date de naissanc
 (synopsis) pourra éventuellement être renseigné. Chaque film est caractérisé par un seul genre 
 cinématographique (science-fiction, aventure, action, ...).
 </p>
+
+<p>Votre application devra recenser également les acteurs de chacun des films. On désire connaître le 
+nom, le prénom, le sexe et la date de naissance de l’acteur ainsi que le rôle (nom du personnage) 
+joué par l’acteur dans le(s) film(s) concerné(s).</p>
