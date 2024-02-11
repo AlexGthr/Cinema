@@ -20,3 +20,8 @@ cinématographique (science-fiction, aventure, action, ...).
 <p>Votre application devra recenser également les acteurs de chacun des films. On désire connaître le 
 nom, le prénom, le sexe et la date de naissance de l’acteur ainsi que le rôle (nom du personnage) 
 joué par l’acteur dans le(s) film(s) concerné(s).</p>
+
+<br><br><br>
+<p><strong>Copyright : </strong></p>
+
+![Elan](https://github.com/AlexGthr/Cinema/assets/145430486/f847025a-e4a1-4585-bd1f-1de40d59d0f0)
